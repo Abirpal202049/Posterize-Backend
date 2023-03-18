@@ -1,0 +1,16 @@
+{
+    "offerCode" : "ABCD1234", 
+    "offerTitle" : "box-office-offer", 
+    "offerDescription" : "this is a brif description", 
+    "offerType" : "Percentage_Discount",
+    "applicableOn" : "All_Order",
+    "startData" : "22-03-2023",
+    "discount" : "",
+    "minOrderValue" : "",
+    "maxDiscount" : "",
+    "expirationDate" : "",
+    "noOfCustomer" : "",
+    "totalCustomer" : "",
+    "offerUsePerCustomer" : "",
+    "usagePerCustomer" : ""
+}

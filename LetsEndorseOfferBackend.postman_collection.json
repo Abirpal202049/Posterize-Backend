@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "b30644f4-42be-47f0-95eb-284c709bb6e2",
+		"name": "LetsEndorseOfferBackend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18346556"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"letsendorse\", \r\n    \"password\" : \"admin@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/user/login",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Secure Route Testing",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/user/dashboard",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"user",
+						"dashboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateOffer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"offerCode\" : \"ABCD1234\", \r\n    \"offerTitle\" : \"abc def\", \r\n    \"offerDescription\" : \"this is a brif description\", \r\n    \"offerType\" : \"Percentage_Discount\",\r\n    \"applicableOn\" : \"All_Order\",\r\n    \"startData\" : \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/offer/create",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"offer",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateOffer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"offerCode\" : \"ABCD123\", \r\n    \"offerTitle\" : \"box office offer validate\", \r\n    \"offerDescription\" : \"this is a brif description\", \r\n    \"offerType\" : \"Percentage_Discount\",\r\n    \"applicableOn\" : \"All_Order\",\r\n    \"startData\" : \"2019-07-04T13:33:03.969Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/offer/update/6415ec61a4c417bbe9241958",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"offer",
+						"update",
+						"6415ec61a4c417bbe9241958"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteOffer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/offer/delete/6415eadf44ac1253f5e1f5ab",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"offer",
+						"delete",
+						"6415eadf44ac1253f5e1f5ab"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllOffers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/offer/get/offers",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"offer",
+						"get",
+						"offers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetOfferByTitle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/offer/get/offer/box-office-offer-validate",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"offer",
+						"get",
+						"offer",
+						"box-office-offer-validate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LatestOffer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/offer/get/latest",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"offer",
+						"get",
+						"latest"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

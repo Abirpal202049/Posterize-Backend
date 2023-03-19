@@ -12,6 +12,10 @@ exports.getAllOffer = async (req, res) => {
             })
         }
 
+        allOffer.sort((a, b) => {
+            return b.startData - a.startData;
+        })
+
         return res.json({
             success :true,
             allOffer :allOffer
@@ -32,7 +36,7 @@ exports.getOfferByTitle = async (req, res) => {
         const offer = await Offer.findOne({ offerTitle: title})
         if (!offer){
             return res.json({ 
-                success  :true,
+                success  :false,
                 message : 'No Offer Exist'
             })
         }

@@ -17,17 +17,17 @@ exports.login = async (req, res) => {
         }
 
         // Check if username and password are not same
-        if (username !== process.env.USERNAME && password !== process.env.PASSWORD) {
+        if (username !== process.env.ADMINUSERNAME || password !== process.env.PASSWORD) {
             return res.json({
                 success: false,
-                message: "Credentials don't match"
+                message: "Credentials don't match",
             })
         }
 
         // Generate a jwt token
         const token = jwt.sign(
             {
-                userName: process.env.USERNAME,
+                userName: process.env.ADMINUSERNAME,
             },
             process.env.JWT_SECRET,
             {
@@ -47,7 +47,7 @@ exports.login = async (req, res) => {
         // Storing it in the cookies
         return res.status(200).cookie('token', token, options).json({
             success: true,
-            message: "User Created Successfully",
+            message: "User Logged In Successfully",
             token,
             userName: username
         })

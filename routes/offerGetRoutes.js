@@ -6,10 +6,11 @@ const router = express.Router()
 // Get the current offer based on the offer date and the expiry date (/get/latest)  -> To be called on the `/` route on frontend
 
 // Importing the controllers
-const { getAllOffer, getLatestOffer, getOfferByTitle } = require('../controllers/offerGetController');
+const { getAllOffer, getLatestOffer, getOfferByTitle, getOfferById } = require('../controllers/offerGetController');
 
 router.get('/offers', getAllOffer)
 router.get('/offer/:title', getOfferByTitle)
+router.get('/offerid/:id', getOfferById)
 router.get('/latest', getLatestOffer)
 
 module.exports = router

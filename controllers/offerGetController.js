@@ -54,6 +54,32 @@ exports.getOfferByTitle = async (req, res) => {
     }
 }
 
+// Getting offer by id
+exports.getOfferById = async (req, res) => {
+    try {
+        const id = req.params.id
+
+        const offer = await Offer.findOne({ _id: id})
+        if (!offer){
+            return res.json({ 
+                success  :false,
+                message : 'No Offer Exist'
+            })
+        }
+
+        return res.json({ 
+            success :true,
+            offer
+        })
+
+    } catch (error) {
+        return res.json({
+            success: false,
+            message: "error.message"
+        })
+    }
+}
+
 // Getting the latest offer
 exports.getLatestOffer = async (req, res) => {
     try {
